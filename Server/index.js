@@ -4,9 +4,20 @@ const fs =  require("fs");
 //req contains data of request
 //res is used to send a response
 const myServer = http.createServer((req,res) =>{
-    const log = `${Date.now()}:New Req Received\n`;
+    const log = `${Date.now()}:${req.url}New Req Received\n`;
     fs.appendFile("log.txt",log,(err,data) =>{
-        res.end("Hello from server again");
+        switch(req.url){
+            case "/":
+                res.end("HomePage");
+                break;
+            case "/about":
+                res.end("Hy! My name is nishtha");
+                break;
+            default:
+                res.end("err:404 NOT FOUND!");    
+
+
+        }
     })
     
     
