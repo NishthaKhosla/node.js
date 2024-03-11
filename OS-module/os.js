@@ -22,4 +22,5 @@ console.log(os.version());
 console.log(os.constants);
 //returns array containing information about thr computer cpu
 console.log(os.cpus());
+console.log(os.cpus());
 //returns path
